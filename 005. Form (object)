@@ -1,0 +1,33 @@
+import { useState } from 'react'
+
+export default function App() {
+  const [form, setForm] = useState({
+    firstName: 'hrithik',
+    lastname: 'roshan',
+    email:'xyz3@gmail.com'
+  })
+
+  return <div>
+    <span>First Name:</span>
+      First Name: 
+      <input value={form.firstName} onChange={(e) => setForm({
+        ...form,
+        firstName: e.target.value
+      })}/>
+    <br/>
+    <span>Last Name:</span>
+      <input value={form.lastname} onChange={(e) => setForm({
+        ...form,
+        lastname: e.target.value
+      })}/>
+    <br/>
+    <span>Email:</span>
+      Emai:
+      <input value={form.email} onChange={(e) => setForm({
+        ...form,
+        email: e.target.value
+      })}/>
+
+    <p>{form.firstName}, {form.lastname}, {form.email}</p>
+  </div>
+}
